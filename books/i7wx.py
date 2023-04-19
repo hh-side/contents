@@ -34,7 +34,7 @@ class ChaptersHTMLParser(HTMLParser):
 
     def handle_data(self, data):
         if self.chapterLink != '':
-            self.chapters.insert(0, {
+            self.chapters.append({
                 "name": data,
                 "link": self.chapterLink
             })
@@ -89,7 +89,7 @@ def parse(history_path='./'):
         response = requests.get(book[1])
         html = response.text
         chapters_parser.feed(html)
-        for chapter in chapters_parser.chapters:
+        for chapter in chapters_parser.chapters[0:5]:
             if rss_feed.exist(chapter['name']) is False:
                 content_parser.next = chapter['link']
                 content_parser.content = ''
