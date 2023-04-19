@@ -88,6 +88,7 @@ def parse(history_path='./'):
             rss_feed.load(history_path + book[2])
         response = requests.get(book[1])
         html = response.text
+        chapters_parser.chapters = []
         chapters_parser.feed(html)
         for chapter in chapters_parser.chapters[0:5]:
             if rss_feed.exist(chapter['name']) is False:
