@@ -92,7 +92,7 @@ def parse(history_path='./'):
         chapters_parser.feed(html)
         for chapter in chapters_parser.chapters[0:5]:
             if rss_feed.exist(chapter['name']) is False:
-                print(f'New chapter {chapter['name']}')
+                print(f'New chapter {chapter["name"]}')
                 content_parser.next = chapter['link']
                 content_parser.content = ''
                 while content_parser.next != '':
@@ -109,4 +109,3 @@ def parse(history_path='./'):
 
 if __name__ == '__main__':
     parse('../rss/')
-
