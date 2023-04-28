@@ -88,19 +88,19 @@ def parse(history_path='./'):
             rss_feed = RSSFeed(book[0], '')
             if os.path.exists(history_path + book[2]):
                 rss_feed.load(history_path + book[2])
-            response = requests.get(book[1], timeout=10)
+            response = requests.get(book[1], timeout=30)
             html = response.text
             chapters_parser.chapters = []
             chapters_parser.feed(html)
-            for chapter in chapters_parser.chapters[0:5]:
+            for chapter in chapters_parser.chapters[0:20]:
                 if rss_feed.exist(chapter['name']) is False:
                     print(f'New chapter {chapter["name"]}')
                     try:
                         content_parser.next = chapter['link']
                         content_parser.content = ''
                         while content_parser.next != '':
-                            time.sleep(2)
-                            response = requests.get(content_parser.next, timeout=10)
+                            time.sleep(5)
+                            response = requests.get(content_parser.next, timeout=30)
                             html = response.text
                             content_parser.feed(html)
                         rss_feed.add_item(chapter['name'],
