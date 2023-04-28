@@ -86,7 +86,7 @@ def parse(history_path='./'):
         rss_feed = RSSFeed(book[0], '')
         if os.path.exists(history_path + book[2]):
             rss_feed.load(history_path + book[2])
-        response = requests.get(book[1])
+        response = requests.get(book[1], timeout=10)
         html = response.text
         chapters_parser.chapters = []
         chapters_parser.feed(html)
@@ -95,7 +95,7 @@ def parse(history_path='./'):
                 content_parser.next = chapter['link']
                 content_parser.content = ''
                 while content_parser.next != '':
-                    response = requests.get(content_parser.next)
+                    response = requests.get(content_parser.next, timeout=10)
                     html = response.text
                     content_parser.feed(html)
                 rss_feed.add_item(chapter['name'],
