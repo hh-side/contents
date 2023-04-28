@@ -5,7 +5,8 @@ from utils.rss import RSSFeed
 
 
 BOOK_LIST = [["高手", "http://m.i7wx.net/read/5704_1_1.html", "xhdtsgs.rss"],
-             ["人道大圣", "http://m.i7wx.net/read/603015_1_1.html", "rdds.rss"]]
+             #["人道大圣", "http://m.i7wx.net/read/603015_1_1.html", "rdds.rss"]
+            ]
 
 
 class ChaptersHTMLParser(HTMLParser):
