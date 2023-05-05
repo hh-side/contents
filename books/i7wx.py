@@ -93,7 +93,7 @@ def parse(history_path='./'):
             html = response.text
             chapters_parser.chapters = []
             chapters_parser.feed(html)
-            for chapter in chapters_parser.chapters[0:20]:
+            for chapter in chapters_parser.chapters[0:10]:
                 if rss_feed.exist(chapter['name']) is False:
                     print(f'New chapter {chapter["name"]}')
                     try:
