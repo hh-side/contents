@@ -39,6 +39,7 @@ def push_wechat_message(content: str, link='https://hhsd.work/static/messages.ht
             }
             headers = {"Content-type": "application/json"}
             data = json.JSONEncoder().encode(body)
+            print(data)
             requests.post(url=f"https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={token}",
                           data=data, headers=headers)
     else:
