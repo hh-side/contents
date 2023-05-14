@@ -107,7 +107,7 @@ def parse(history_path='./'):
                         rss_feed.add_item(chapter['name'],
                                           content_parser.content.replace('本章未完，请点击下一页继续阅读》》', ''),
                                           chapter['link'])
-                        push_wechat_message('# {} - {}'.format(book[0], chapter['name']), link=chapter['link'])
+                        push_wechat_message('{} - {}'.format(book[0], chapter['name']), link=chapter['link'])
                     except Exception as ex:
                         print(ex)
             print(book)
