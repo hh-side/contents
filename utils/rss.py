@@ -20,7 +20,7 @@ class RSSFeed:
 
     def save(self, file_path):
         if len(self._data['rss']['channel']['item']) > 20:
-            self._data['rss']['channel']['item'] = self._data['channel']['item'][0:20]
+            self._data['rss']['channel']['item'] = self._data['rss']['channel']['item'][0:20]
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(simplexml.dumps(self._data))
 
