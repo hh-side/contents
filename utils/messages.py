@@ -6,7 +6,7 @@ import requests
 # wechat
 WX_APP_ID = os.environ['WX_APP_ID'] if os.environ.__contains__('WX_APP_ID') else 'wx74b2043f9f24c928'
 WX_APP_SECRET = os.environ['WX_APP_SECRET'] if os.environ.__contains__('WX_APP_SECRET') else 'a7468306e935e67097f43270a4b0dc13'
-WX_TEMPLATE_ID = os.environ['WX_TEMPLATE_ID'] if os.environ.__contains__('WX_TEMPLATE_ID') else '65PHtCLUJbLABGyjVirGQlGi9rHnOhIq3zE9z36-bZc'
+WX_TEMPLATE_ID = os.environ['WX_TEMPLATE_ID'] if os.environ.__contains__('WX_TEMPLATE_ID') else 'WpO9v3--UYjnW_ZIGgtIAfLCa1fF6g327GIhNBQRJ1I'
 # pushdeer
 PUSH_DEER_KEY = os.environ['PUSH_DEER_KEY'] if os.environ.__contains__('PUSH_DEER_KEY') else 'PDU21978TagRhUtBTvxub8ziAncb4WJ0ycsIS1NnX'
 
@@ -30,7 +30,6 @@ def push_wechat_message(content: str, link='https://hhsd.work/static/messages.ht
                 "touser": open_id,
                 'template_id': WX_TEMPLATE_ID,
                 'url': link,
-                "topcolor": "#667F00",
                 "data": {
                     "results": {
                         "value": content
@@ -52,3 +51,7 @@ def push_pushdeer_message(content: str):
         "text": content
     })
     print(response.text)
+
+
+if __name__ == '__main__':
+    push_wechat_message('测试')

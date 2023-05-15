@@ -1,6 +1,7 @@
 import time
 from html.parser import HTMLParser
 from utils.messages import *
+from utils.upload import *
 from utils.rss import RSSFeed
 
 
@@ -112,6 +113,8 @@ def parse(history_path='./'):
                         print(ex)
             print(book)
             rss_feed.save(history_path + book[2])
+            print('Upload to server: {}'.format(book[2]))
+            upload_to_server(history_path + book[2])
         except Exception as ex:
             print(ex)
 
