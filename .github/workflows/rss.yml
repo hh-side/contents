@@ -23,6 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
         pip install python-simplexml
+        pip install requests-toolbelt
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Python Jobs
       env: 
@@ -30,6 +31,7 @@ jobs:
         WX_APP_SECRET: ${{ secrets.WX_APP_SECRET }} 
         WX_TEMPLATE_ID: ${{ vars.WX_TEMPLATE_ID }}
         PUSH_DEER_KEY: ${{ vars.PUSH_DEER_KEY }}
+        ALIST_HOST: ${{ secrets.ALIST_HOST }} 
       run: |
         python main.py
     - name: Commit
