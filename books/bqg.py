@@ -1,6 +1,7 @@
 import time
 from html.parser import HTMLParser
 from utils.messages import *
+from utils.upload import *
 from utils.rss import RSSFeed
 
 
