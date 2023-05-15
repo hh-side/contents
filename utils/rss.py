@@ -37,7 +37,7 @@ class RSSFeed:
                 "title": title,
                 "link": link if link is not None else f'#title={title}',
                 "description": description,
-                "publish_date": datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
+                "pubDate": datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
             })
 
 
