@@ -104,14 +104,14 @@
             "name": "网盘 | Alist[jar]",
             "type": 3,
             "api": "csp_AList",
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/alist.json"
+            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/hh-side/contents/main/tv/box/conf/alist_jar.json"
         },
         {
             "key": "drpy_js_Alist",
             "name": "网盘 | Alist[js]",
             "type": 3,
             "api": "https://ghproxy.com/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/alist.min.js",
-            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/hjdhnx/dr_py/main/txt/json/alist.json"
+            "ext": "https://ghproxy.com/https://raw.githubusercontent.com/hh-side/contents/main/tv/box/conf/alist_js.json"
         },
         {
             "key": "drpy_js_360影视",
