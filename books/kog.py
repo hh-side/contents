@@ -2,6 +2,7 @@ import os
 import re
 import requests
 from selectolax.parser import HTMLParser
+from utils.upload import *
 from utils.rss import RSSFeed
 
 
