@@ -66,7 +66,7 @@ def parse(history_path='./'):
             rss_feed.save(history_path + book[2])
             print('Upload to server: {}'.format(book[2]))
             upload_to_server(history_path + book[2])
-            raise ex
+            print(ex)
 
 
 if __name__ == '__main__':
