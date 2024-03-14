@@ -59,8 +59,12 @@ def parse(history_path='./'):
                     if count >= 20:
                         break
             rss_feed.save(history_path + book[2])
+            print('Upload to server: {}'.format(book[2]))
+            upload_to_server(history_path + book[2])
         except Exception as ex:
             rss_feed.save(history_path + book[2])
+            print('Upload to server: {}'.format(book[2]))
+            upload_to_server(history_path + book[2])
             raise ex
 
 
